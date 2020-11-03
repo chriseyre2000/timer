@@ -5,7 +5,6 @@ defmodule Countdown do
     {:ok, state}
   end
 
-
   def handle_info(:tick, 0) do
     IO.puts "\rDone"
     {:stop, :timeout, 0}
