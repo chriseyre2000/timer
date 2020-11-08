@@ -1,11 +1,14 @@
 defmodule Timer do
   @moduledoc """
-  Documentation for `Timer`.
+  Triggers a countdown timer.
   """
 
-  def start do
-    {:ok, pid} = GenServer.start(Countdown, 60 * 20)
-
-    {:ok, _} =:timer.send_interval(:timer.seconds(1), pid, :tick)
+  @doc """
+  Starts a countdown timer. The parameter is seconds.
+  Will default to 20 mins
+  """
+  @spec start(seconds::non_neg_integer()) :: any()
+  def start(seconds \\ 60 * 20) do
+    Countdown.start( seconds )
   end
 end

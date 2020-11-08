@@ -1,21 +1,11 @@
 # Timer
 
-**TODO: Add description**
+This adds a countdown timer to iex.
 
-## Installation
+I find it useful when giving a talk to see how long I have left.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `timer` to your list of dependencies in `mix.exs`:
+Countdown.start( seconds )
+Countdown.stop()
 
-```elixir
-def deps do
-  [
-    {:timer, "~> 0.1.0"}
-  ]
-end
-```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/timer](https://hexdocs.pm/timer).
 

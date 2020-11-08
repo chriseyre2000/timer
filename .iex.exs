@@ -1,1 +1,1 @@
-Timer.start
+Timer.start 5 * 60
