@@ -14,6 +14,7 @@ defmodule Countdown do
 
   def handle_info(:tick, %Countdown{remaining: 0, timeref: timeref} = state) do
     {:ok, :cancel} = :timer.cancel(timeref)
+
     IO.puts "\rDone"
     {:stop, :timeout, state}
   end
