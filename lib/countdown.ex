@@ -16,7 +16,7 @@ defmodule Countdown do
     {:ok, :cancel} = :timer.cancel(timeref)
 
     IO.puts "\rDone"
-    {:stop, :timeout, state}
+    {:stop, :normal, 0}
   end
 
   def handle_info(:tick, %Countdown{remaining: seconds} = state) do
@@ -27,7 +27,7 @@ defmodule Countdown do
   def handle_cast(:stop, %Countdown{timeref: timeref} = state) do
     {:ok, :cancel} = :timer.cancel(timeref)
     IO.puts "\rStopped"
-    {:stop, :stopped, state}
+    {:stop, :normal, 0}
   end
 
   def handle_cast({:timeref, timeref}, %Countdown{} = state) do
@@ -59,4 +59,5 @@ defmodule Countdown do
   def stop() do
     GenServer.cast(__MODULE__, :stop)
   end
+
 end
